@@ -4,10 +4,10 @@ package recursion;
 public class SearchDataInArryMid { 
 	
 	public static void main(String[] args) {
-		int [] arry = {10,0,5,92,2,4,68};
+		int [] arry = {4, 67, 10, 38, 36, 60, 28};
 		
-		int result = search(arry, 0, arry.length-1, 4);
-		System.out.println(result);
+		int result = search(arry, 0, arry.length-1, 28);
+		System.out.println("result : "+result);
 	}
 	
 	

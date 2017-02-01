@@ -7,7 +7,7 @@ public class SearchDataInArryMid {
 		int [] arry = {4, 67, 10, 38, 36, 60, 28};
 		int begin = 0;
 		int last = arry.length-1;
-		int target = 38;
+		int target = 28;
 		
 		System.out.println(searchData(arry, begin, last, target));
 	}
@@ -20,7 +20,7 @@ public class SearchDataInArryMid {
 			if(target == arry[middle]){
 				return middle;
 			}else{
-				int result = searchData(arry, begin, middle, target);
+				int result = searchData(arry, begin, middle-1, target);
 				if(result != -1){
 					return result;
 				}else{

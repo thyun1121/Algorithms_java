@@ -2,15 +2,15 @@ package recursion;
 
 public class StrPrintRvrs {
 	public static void main(String[] args) {
-		print("thyunAhn");
+		System.out.println(print("thyunAhn"));
 	}
 	
-	public static void print(String str){
+	public static String print(String str){
 		if(str.length()==0){
-			return;
+			return "";
+		}else{
+			String rtn = print(str.substring(1));
+			return rtn+str.charAt(0);
 		}
-		
-		print(str.substring(1));
-		System.out.print(str.charAt(0));
 	}
 }

@@ -3,19 +3,20 @@ package recursionPrac;
 public class strPrintRvrs {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		String str = "programming";
-		
-		System.out.print(printStr(str));
+		String str = "thyun.ahn";
+		printRverse(str);
 	}
 	
-	public static String printStr(String str){
-		
+	public static void printRverse(String str){
 		if(str.length()==0){
-			return "";
+			return;
 		}
-		String result = printStr(str.substring(1));		
-		return result+str.charAt(0);
+		printRverse(str.substring(1));
+		System.out.print(str.charAt(0));
 	}
+	
+	
+		
+		
 
 }

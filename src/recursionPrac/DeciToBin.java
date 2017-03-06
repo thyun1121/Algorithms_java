@@ -2,16 +2,17 @@ package recursionPrac;
 
 public class DeciToBin {
 	public static void main(String[] args) {
-		int n = 36;
-		changeToBin(n);
+		int num = 36;
+		
+		decimalToBin(num);
 	}
 	
-	public static void changeToBin(int n){
-		if(n<2){
-			System.out.print(n);
+	public static void decimalToBin(int num){
+		if(num < 2){
+			System.out.println(num);
 		}else{
-			changeToBin(n/2);
-			System.out.print(n%2);
+			decimalToBin(num/2);
+			System.out.println(num%2);
 		}
-	}	
+	}
 }

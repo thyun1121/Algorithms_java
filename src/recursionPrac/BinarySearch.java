@@ -3,35 +3,37 @@ package recursionPrac;
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		String []strArray = {"a", "d", "g", "l", "x"};
+	
+		String [] arry = {"a", "b", "c", "d", "e"};
 		
-		String target = "l";
 		int begin = 0;
-		int last  = strArray.length-1;
+		int end = arry.length-1;
+		String target = "d";
 		
-		System.out.println(getBinarySearch(strArray, begin, last, target));
+		System.out.println(execBinarySearch(arry, begin, end, target));
 	}
 	
-	public static int getBinarySearch(String [] strArray, int begin, int last, String target){
-		if(begin>last){
+	public static int execBinarySearch(String[] arry, int begin, int end, String target){
+		if(begin>end){
 			return -1;
-		}
-		
-		int middle = (begin+last)/2;
-		
-		if(strArray[middle] == target){
-			return middle;
 		}else{
-			int cmp = target.compareTo(strArray[middle]);
-			if(cmp == 0){
+			int middle = (begin+end)/2;
+			
+			if(target == arry[middle]){
 				return middle;
-			}else if(cmp<0){
-				return getBinarySearch(strArray, begin, middle, target);
 			}else{
-				 return getBinarySearch(strArray, middle+1, last, target);
+				int cmp = target.compareTo(arry[middle]);
+				if(cmp == 0){
+					return middle;
+				}else if(cmp < 0){
+					return execBinarySearch(arry, begin, middle, target);
+				}else if(cmp > 0){
+					return execBinarySearch(arry, middle+1, end, target);
+				}
 			}
 		}
+		return 0;
 	}
 	
-
+	
 }

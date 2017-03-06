@@ -20,7 +20,7 @@ public class Blob {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(countCells(3,5));
+		System.out.println(countCells(0,0));
 	}
 	
 	private static int countCells(int x, int y){

@@ -8,23 +8,25 @@ public class Euclid {
 		int a = 30;
 		int b = 12;
 		
-		gcd(a, b);
+		System.out.println(gcb(a, b));
 		
 	}
 	
-	public static void gcd(int a, int b){
+	public static int gcb(int a, int b){
 		if(a%b == 0){
-			System.out.println(b);
+			return b;
 		}else{
 			if(a<b){
-				int temp = a;
-				a = b;
-				b = temp;
+				int temp = b;
+				b=a;
+				a=temp;
 			}
-			gcd(b, a%b);
+			
+			return gcb(b, a%b);
 		}
-		
 	}
+	
+	
 	
 	
 

@@ -3,18 +3,19 @@ package recursionPrac;
 public class Fibonacci {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int num = 8;
-		System.out.println(sum(num));
+		int num = 6;
+		
+		System.out.println(fibonacci(num));
 	}
 	
-	public static int sum(int num){
+	public static int fibonacci(int num){
 		if(num<2){
-			return num;
+			return num; 
 		}else{
-			return sum(num-1)+sum(num-2);
+			return fibonacci(num-2)+fibonacci(num-1);
 		}
 	}
+	
 	
 
 }

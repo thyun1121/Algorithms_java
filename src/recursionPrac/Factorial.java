@@ -3,19 +3,19 @@ package recursionPrac;
 public class Factorial {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int num = 5;
+		int num = 6;
 		
-		System.out.println(execFactorial(num));
+		System.out.println(factorial(num));
 	}
 	
-	public static int execFactorial(int num){
-		if(num == 0){
+	public static int factorial(int num){
+		if(num <1){
 			return 1;
 		}else{
-			return num*execFactorial(num-1);
+			return num*factorial(num-1);
 		}
-			
 	}
+	
+	
 
 }

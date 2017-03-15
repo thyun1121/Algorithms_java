@@ -19,27 +19,32 @@ public class Maze {
 	private static final int PATHED		= 3;
 	
 	public static void main(String[] args) {
-		System.out.println(findPath(0,0));
+		int x=0;
+		int y=0;
+		
+		System.out.println(findMaze(x,y));
 	}
 	
-	public static boolean findPath(int x, int y){
-		if(x<0 || y<0 || x>=N || y>=N){
+	
+	public static boolean findMaze(int x, int y){
+		if(x<0||y<0||x>=N||y>=N){
 			return false;
 		}else if(maze[x][y] != PATHWAY){
 			return false;
-		}else if(x== N-1 && y== N-1){
-			maze[x][y] = PATHED;
-			return true;
+		}else if(x==N-1 && y==N-1){
+			return true;			
 		}else{
 			maze[x][y] = PATHED;
-			if(findPath(x-1, y)||findPath(x, y+1)||findPath(x+1, y)||findPath(x, y-1)){
+			if(findMaze(x, y+1)||findMaze(x,y-1)||findMaze(x+1, y)||findMaze(x-1,y)){
 				return true;
-			}else{
-				maze[x][y] = BLOCKED;
-				return false;
 			}
 			
+			maze[x][y] = BLOCKED;
+			return false;
 		}
 	}
+	
+	
+	
 
 }

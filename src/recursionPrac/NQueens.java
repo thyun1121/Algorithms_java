@@ -10,19 +10,16 @@ public class NQueens {
 		queens(0);
 	}
 	
+	
 	public static boolean queens(int level){
 		if(!promising(level)){
 			return false;
-		}
-		
-		else if(level == N){
+		}else if(level == N){
 			for(int i=0; i<=N; i++){
-				System.out.println(i+ " : "+ cols[i]);
+				System.out.println("("+i+","+cols[i]+")");
 			}
 			return true;
-		}
-		
-		else{
+		}else{
 			for(int i=1; i<=N; i++){
 				cols[level+1] = i;
 				if(queens(level+1)){
@@ -34,15 +31,18 @@ public class NQueens {
 	}
 	
 	public static boolean promising(int level){
-		for(int i= 0; i<level; i++){
+		for(int i=0; i<level; i++){
 			if(cols[i] == cols[level]){
 				return false;
-			}else if(Math.abs(level-i)== Math.abs(cols[level]- cols[i])){
+			}
+			
+			if(Math.abs(level - i) == Math.abs(cols[i] - cols[level])){
 				return false;
 			}
 		}
-		return true;	
 		
-	}	
-
+		return true;
+	}
+	
+	
 }

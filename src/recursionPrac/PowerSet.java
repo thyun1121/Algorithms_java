@@ -2,30 +2,36 @@ package recursionPrac;
 
 public class PowerSet {
 	
-	private static char [] S = {'a', 'b', 'c'};
-	private static int n = S.length;
-	private static boolean [] P = new boolean [n];
+	private static char[] data = {'a', 'b', 'c'};
+	private static int n = data.length;	
+	private static boolean[] include = new boolean[n];
+	
 	
 	public static void main(String[] args) {
-		powerSet(0);
+		powerset(0);
+		
 	}
 	
 	
-	public static void powerSet(int k){
-		if(k==n){
+	public static void powerset(int k){
+		if(k == n){
+			
 			for(int i=0; i<k; i++){
-				if(P[i]){
-					System.out.print(S[i]);
-				}
+				if(include[i]){
+					System.out.print(data[i]+" ");
+				}					
 			}
+			
 			System.out.println();
-		}else{
-			P[k] = false;
-			powerSet(k+1);
-			P[k] = true;
-			powerSet(k+1);
+			return;
 		}
-	}
-	
-	
+		
+		include[k]= false;
+		powerset(k+1);
+		
+		include[k]= true;
+		powerset(k+1);
+	}	
 }
+	
+	

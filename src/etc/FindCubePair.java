@@ -31,9 +31,6 @@ public class FindCubePair {
 				ArrayList<Pair> list = new ArrayList<>();
 				hashMap.put(result, list);
 				hashMap.get(result).add(new Pair(c,d));
-				
-				//list.add(new Pair(c,d));
-				//hashMap.put(result, list);
 			}
 		}
 		

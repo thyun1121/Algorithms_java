@@ -1,5 +1,10 @@
 package recursionPrac;
 
+//f0 = 0
+//f1 = 1
+//fn = fn-1 + fn-2  (n>1)
+
+//0112358
 public class Fibonacci {
 
 	public static void main(String[] args) {
@@ -12,7 +17,7 @@ public class Fibonacci {
 		if(num<2){
 			return num; 
 		}else{
-			return fibonacci(num-2)+fibonacci(num-1);
+			return fibonacci(num-1)+fibonacci(num-2);
 		}
 	}
 	

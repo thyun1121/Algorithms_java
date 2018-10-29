@@ -1,16 +1,8 @@
+package baekjoon;
+
 import java.util.Scanner;
 
-//week3
-/**
- * 
- * @author thyun.ahn
- *
- *	child!/parent!*(child-parent)!
- *  주어진 수에서 2,5의 소인수 개수를 구하고 그 중 작은 갯수인 것이 10을 만드는 개수이며 이것은 곧 0의 개수를 뜻하게 된다. 
- *
- */
-public class Combinationzero {
-
+public class BJ_2004 {
 	public static int[] saveTwo = new int [3];
 	public static int[] saveFive = new int [3];
 	
@@ -40,5 +32,4 @@ public class Combinationzero {
 		}
 		saveTwo[index] = cntTwo;
 	}
-
 }

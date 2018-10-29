@@ -1,5 +1,6 @@
 package algorithmsMasterWeek1;
 
+//못품.
 public class Prac4 {
 	
 	public static void main(String[] args) {

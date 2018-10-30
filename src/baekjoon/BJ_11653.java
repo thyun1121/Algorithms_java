@@ -1,6 +1,9 @@
+package baekjoon;
+
 import java.util.Scanner;
 
-public class Main {
+public class BJ_11653 {
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		int N = sc.nextInt();
@@ -13,4 +16,5 @@ public class Main {
 				i++;
 		}
 	}
+
 }

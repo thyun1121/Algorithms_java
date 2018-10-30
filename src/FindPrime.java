@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
-public class Main {
+public class FindPrime {
+
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
@@ -15,6 +16,7 @@ public class Main {
 					count++;
 					continue;
 				}				
+				
 				if(num%j==0)
 					break;
 			}

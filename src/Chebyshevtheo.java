@@ -1,6 +1,7 @@
+
 import java.util.Scanner;
 
-public class Main {
+public class Chebyshevtheo {
 	public static void main(String[] args) {
 		final int MAX = 246912;
 		boolean[] notPrimeArry = new boolean[MAX+1];

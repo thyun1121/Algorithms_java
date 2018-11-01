@@ -1,3 +1,4 @@
+package algorithmsJobs;
 import java.util.Scanner;
 
 public class FindPrime {

@@ -1,6 +1,9 @@
+package baekjoon;
+
 import java.util.Scanner;
 
-public class Main {
+public class BJ_4948 {
+
 	public static void main(String[] args) {
 		final int MAX = 246912;
 		boolean[] notPrimeArry = new boolean[MAX+1];
@@ -33,4 +36,5 @@ public class Main {
 			}
 		}
 	}
+
 }

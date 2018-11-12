@@ -1,3 +1,4 @@
+package algorithmsJobs.course4;
 import java.util.Scanner;
 
 public class Binary {

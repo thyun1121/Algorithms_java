@@ -1,6 +1,11 @@
 import java.util.PriorityQueue;
 import java.util.Scanner;
-
+/**
+ * 
+ * @author thyun.ahn
+ * 1) str.char(j)-'0'을 하면 아스키코드에 의해 숫자가 나온다고 함.
+ *
+ */
 public class Danji {
 	public static int[][] arryMap;
 	public static PriorityQueue<Integer> pq = new PriorityQueue<Integer>();

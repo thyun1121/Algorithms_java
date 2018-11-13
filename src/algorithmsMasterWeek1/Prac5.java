@@ -26,7 +26,7 @@ public class Prac5 {
 		
 			
 		PriorityQueue<Integer> min_heap = new PriorityQueue<Integer>();		//default constructor : minheap
-		PriorityQueue<Integer> max_heap = new PriorityQueue<>(Collections.reverseOrder());		//maxheap
+		PriorityQueue<Integer> max_heap = new PriorityQueue<Integer>(Collections.reverseOrder());		//maxheap
 		
 		for(int i=0; i<N; i++){
 			if(max_heap.isEmpty() || max_heap.peek()>num[i]){		//maxheap을 기준으로 maxheap보다 작으면 maxheap에 넣는다.

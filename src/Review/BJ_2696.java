@@ -1,9 +1,12 @@
+package Review;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class Main {
+//findMedian
+public class BJ_2696 {
 	public static PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(Collections.reverseOrder());
 	public static PriorityQueue<Integer> minHeap = new PriorityQueue<Integer>();
 	public static ArrayList<Integer> al = new ArrayList<Integer>();
@@ -48,23 +51,20 @@ public class Main {
 			for(int l=0; l<al.size(); l++){
 				//System.out.print(rslt+" ");
 				if(l%10==0){
-					sb.append("\n");
+					sb.append("\r\n");
 				}
 				sb.append(al.get(l)+" ");
-				
-				if(l%10==9 || l==al.size()-1)
-					sb.delete(sb.length()-1, sb.length());
-			}		
-			
+					
+			}
 			//System.out.println();
 			if(i!=testCase-1){
-				sb.append("\n");
+				sb.append("\r\n");
 			}
 			
 			al.clear();
 			maxHeap.clear();
 			minHeap.clear();			
 		}
-		System.out.print(sb);
+		System.out.println(sb);
 	}
 }

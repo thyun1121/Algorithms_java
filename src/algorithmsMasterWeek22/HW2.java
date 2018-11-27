@@ -1,4 +1,4 @@
-package algorithmsMasterWeek2;
+package algorithmsMasterWeek22;
 
 import java.util.Arrays;
 import java.util.Scanner;

@@ -1,4 +1,4 @@
-package algorithmsMasterWeek2;
+package algorithmsMasterWeek22;
 
 import java.io.BufferedReader;
 import java.io.IOException;

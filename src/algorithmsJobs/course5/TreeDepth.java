@@ -1,3 +1,4 @@
+package algorithmsJobs.course5;
 import java.util.Scanner;
 
 public class TreeDepth {
@@ -6,8 +7,8 @@ public class TreeDepth {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		int N = sc.nextInt();
-		int R = sc.nextInt();
+		int N = sc.nextInt();	//node count
+		int R = sc.nextInt();	//root node
 		
 		int[] parent = new int[N];
 		
@@ -21,7 +22,6 @@ public class TreeDepth {
 		for(int i=parent.length-1; i>=0; i--){
 			findTreeDepth(parent, i, R);	
 		}
-		
 		
 		System.out.println(maxDepth);
 		

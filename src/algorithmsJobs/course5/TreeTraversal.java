@@ -1,3 +1,4 @@
+package algorithmsJobs.course5;
 import java.util.Scanner;
 
 class Tree{

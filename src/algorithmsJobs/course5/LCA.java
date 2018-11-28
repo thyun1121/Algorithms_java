@@ -1,3 +1,4 @@
+package algorithmsJobs.course5;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -39,7 +40,7 @@ public class LCA {
 	}
 	
 	public static void findLCA(int[] parent, int node, ArrayList<Integer> parentArryList){
-		if(node==0){				//테스트케이스 상 0이 들어올때 부모노드를 0으로 넣어줘야 함.
+		if(node==0){				//테스트케이스 상 0이 들어올때 부모노드를 0으로 넣어줘야 함. 사실 테스트케이스의 오류임.
 			parentArryList.add(0);
 			return;
 		}

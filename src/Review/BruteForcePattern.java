@@ -2,6 +2,13 @@ package Review;
 
 import java.util.ArrayList;
 
+/**
+ * 
+ * @author thyun.ahn
+ * 
+ * Review of RecursionPattern.java
+ *
+ */
 public class BruteForcePattern {
 	public static int N = 4;
 	public static String[] useStr = {"0","1","2"};

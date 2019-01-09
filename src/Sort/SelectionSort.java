@@ -8,12 +8,14 @@ public class SelectionSort {
 		for(int i = arry.length-1; i>0; i--){
 			int index = i;
 			
+			// find max number
 			for(int j = 0; j<i; j++){
 				if(arry[index] < arry[j]){
 					index = j;
 				}
 			}
 			
+			// put max number in last index and put selected number to max number's before index
 			temp = arry[i];
 			arry[i]=arry[index];
 			arry[index] = temp;

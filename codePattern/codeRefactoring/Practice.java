@@ -1,61 +1,58 @@
 package codeRefactoring;
 
 public class Practice {
-	
 	public static void main(String[] args) {
-		NumberPrac num = new NumberPrac(10);
-		NumberPrac result = num.calculate("+", new NumberPrac(14));
+		Num num = new Num(10);
+		Num result = num.calculate("+", new Num(20));
 		System.out.println(result.getNo());
 	}
 
 }
 
-class NumberPrac {
+class Num {
 	private int no;
-	public NumberPrac(int no){
-		this.no = no;
+	public Num(int no){
+		this.no=no;
 	}
 	public int getNo(){
 		return this.no;
 	}
-	
-	public NumberPrac calculate(String expression, NumberPrac number){
-		return Calculation.find(expression).calculate(this, number);
+	public Num calculate(String expr, Num num){
+		Calculation calc = Calculation.findExpr(expr);
+		return calc.calculate(this, num);
 	}
 	
 	private enum Calculation{
 		ADDITION("+", new Calculator(){
 			@Override
-			public int calculate(int number1, int number2){
-				return number1+number2;
+			public int calculate(int num1, int num2){
+				return num1+num2;
 			}
 		});
 		
-		private String expression;
-		private Calculator calculator;
+		private String expr;
+		private Calculator calc;
 		
-		Calculation(String expression, Calculator calculator){
-			this.expression=expression;
-			this.calculator=calculator;
+		private Calculation(String expr, Calculator calc){
+			this.expr=expr;
+			this.calc = calc;
 		}
-		
-		public NumberPrac calculate(NumberPrac number1, NumberPrac number2){
-			return new NumberPrac(this.calculator.calculate(number1.no, number2.no));
+		public Num calculate(Num num1, Num num2){
+			return new Num(this.calc.calculate(num1.no, num2.no));
 		}
-		
-		public static Calculation find(String expression){
-			for(Calculation calc : Calculation.values()){
-				if(calc.expression.equals(expression))
+		public boolean isMatched(String expr){
+			return expr.equals(this.expr);
+		}
+		public static Calculation findExpr(String expr){
+			for(Calculation calc:Calculation.values()){
+				if(calc.isMatched(expr)){
 					return calc;
+				}
 			}
 			throw new IllegalArgumentException();
 		}
-		
-		
 		private interface Calculator{
-			public int calculate(int number1, int number2);
+			public int calculate(int num1, int num2);
 		}
 	}
-	
-
 }

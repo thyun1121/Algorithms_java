@@ -1,6 +1,7 @@
 package Review;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
@@ -27,22 +28,20 @@ import java.util.Scanner;
  */
 
 public class BfsDfs {
-	public static int N ;	//vertex
-	public static int M ;	//edge
 	public static boolean[] checked;
 	public static ArrayList<Integer>[] al;
 	public static Queue<Integer> queue;
 	
-			
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
-		N = sc.nextInt();
-		M = sc.nextInt();
-		checked= new boolean[N+1];
+		int N = sc.nextInt();
+		int M = sc.nextInt();
+		checked = new boolean[N];
 		al = new ArrayList[N];
 		for(int i=0; i<N; i++){
 			al[i] = new ArrayList<Integer>();
 		}
+		
 		for(int i=0; i<M; i++){
 			int a = sc.nextInt();
 			int b = sc.nextInt();
@@ -50,39 +49,42 @@ public class BfsDfs {
 			al[b].add(a);
 		}
 		
+		for(int i=0; i<al.length; i++){
+			Collections.sort(al[i]);  // 만약 숫자가 오름차순으로 정렬안되었을 경우 대비.
+		}
+		
+		
 		dfs(0);
-		System.out.println();
-		checked = new boolean[N+1];
+		checked = new boolean[N];
 		queue = new LinkedList<Integer>();
+		System.out.println();
 		bfs(0);
 	}
 	
-	public static void bfs(int start){
-		
-		queue.add(start);
-		checked[start] = true;
-		int current;
+	public static void bfs(int index){
+		queue.add(index);
+		checked[index] = true;
 		while(!queue.isEmpty()){
-			current = queue.poll();
-			
-			System.out.print(current);
-			for(int i=0; i<al[current].size(); i++){
-				if(!checked[al[current].get(i)]){
-					queue.add(al[current].get(i));
-					checked[al[current].get(i)] = true;
+			int base = queue.poll();
+			for(int i=0; i<al[base].size(); i++){
+				if(!checked[al[base].get(i)]){
+					queue.add(al[base].get(i));
+					checked[al[base].get(i)] = true;
 				}
 			}
+			System.out.print(base);
 		}
 	}
 	
-	public static void dfs(int start){
-		checked[start] = true;
-		System.out.print(start);
-		
-		for(int i=0; i<al[start].size(); i++){
-			if(!checked[al[start].get(i)])
-				dfs(al[start].get(i));
+	public static void dfs(int index){
+		checked[index] = true;
+		System.out.print(index);
+		for(int i=0; i<al[index].size(); i++){
+			if(!checked[al[index].get(i)]){
+				dfs(al[index].get(i));
+			}
 		}
+		
 	}
 
 }

@@ -4,6 +4,20 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
+
+/**
+ * 
+ * @author thyun.ahn
+ * 
+ * 입력
+ * 4 5
+	0 1
+	0 2
+	0 3
+	1 3
+	2 3
+ *
+ */
 public class BfsDfs {
 	public static ArrayList<Integer>[] graphList;
 	public static boolean[] visited;    

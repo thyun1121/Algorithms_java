@@ -27,6 +27,12 @@ public class PartialSum2Arry {
 			System.out.println();
 		}
 	}
+	
+	//1,1 ~ 2,2 (0부터 시작.)
+	private int getPartialSum(int x1, int y1, int x2, int y2){
+		return pSum[x2][y2]-pSum[x1-1][y2]-pSum[x2][y1-1]+pSum[x1-1][y1-1];
+	}
+	
 	public static void main(String[] args) {
 
 		PartialSum2Arry ps = new PartialSum2Arry();
@@ -36,8 +42,8 @@ public class PartialSum2Arry {
 
 		//부분합 배열 출력
 		ps.printPartialSumArry();
-
-
+		
+		//(1,1) ~ (2,2)까지의 합.
+		System.out.println(ps.getPartialSum(1,1,2,2));
 	}
-
 }

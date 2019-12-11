@@ -16,15 +16,35 @@ public class PartialSumVariance {
 		
 		// set 부분합제곱.
 		sqPSums = new int[pSums.length];
-		for(int i=0; i<pSums.length; i++){
-			sqPSums[i] = pSums[i]*pSums[i];
+		sqPSums[0] = scores[0]*scores[0];
+		for(int i=1; i<pSums.length; i++){
+			sqPSums[i] = (scores[i]*scores[i])+sqPSums[i-1];
 		}	
 		
 	}
 	
-	private double getVariance(int start, int end){
-		double ret = 0.0;
+	private int getPsum(String flag, int start, int end){
+		int rslt = 0;
+		int[] paramArry = new int [scores.length]; 
 		
+		switch(flag){
+			case "pSums":
+				paramArry = pSums;
+				break;
+			case "sqPSums":
+				paramArry = sqPSums;
+				break;
+		}
+		
+		if(start==0)	rslt = paramArry[end];
+		else	rslt = paramArry[end]-paramArry[start-1];
+		return rslt;
+	}
+	
+	private double getVariance(int start, int end){
+		double pSumVal = getPsum("pSums", start, end);
+		double mean = pSumVal / (end-start+1) ;
+		double ret = (getPsum("sqPSums", start, end) - 2*mean*pSumVal + (end-start+1)*mean*mean) / (end-start+1); 
 		return ret;
 	}
 	
@@ -33,7 +53,7 @@ public class PartialSumVariance {
 	public static void main(String[] args) {
 		PartialSumVariance psv = new PartialSumVariance();
 		psv.setPsum();
-		psv.getVariance(1,4);
+		System.out.println(psv.getVariance(0,3));
 		
 	}
 

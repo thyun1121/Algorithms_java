@@ -71,7 +71,7 @@ public class Christmas {
 			int beginIndex = lastNumList.get(pSums[i]);
 
 			if(beginIndex > -1)				// i를 사는 경우, (이미 똑같은 숫자를 본 상태이니까 )
-				ret[i] = Math.max(ret[i], ret[beginIndex]+1);	//begin+1~현 index까지 사는 개수 (1번) + begin까지의 구매 가능했던 수.
+				ret[i] = Math.max(ret[i-1], ret[beginIndex]+1);	//begin+1~현 index까지 사는 개수 (1번) + begin까지의 구매 가능했던 수.
 			else							// i를 못 사는 경우,
 				ret[i] = (i>0) ? ret[i-1] : 0 ;
 

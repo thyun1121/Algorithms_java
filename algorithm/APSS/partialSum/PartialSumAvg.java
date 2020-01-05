@@ -1,4 +1,4 @@
-package APSS;
+package APSS.partialSum;
 
 
 public class PartialSumAvg {

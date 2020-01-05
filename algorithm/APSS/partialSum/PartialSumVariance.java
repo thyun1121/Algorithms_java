@@ -1,4 +1,4 @@
-package APSS;
+package APSS.partialSum;
 
 public class PartialSumVariance {
 	private int[] scores = {100, 97, 86, 79, 66, 52, 49, 42, 41};

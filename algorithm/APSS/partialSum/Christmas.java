@@ -1,4 +1,4 @@
-package APSS;
+package APSS.partialSum;
 
 import java.util.ArrayList;
 import java.util.Arrays;

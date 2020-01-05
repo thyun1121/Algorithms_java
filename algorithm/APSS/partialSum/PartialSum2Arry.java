@@ -1,4 +1,4 @@
-package APSS;
+package APSS.partialSum;
 
 public class PartialSum2Arry {
 	private int[][] arry = {{0,1,1,0,0,1}, {0,0,0,0,0,1}, {1,0,1,0,1,1}};;
